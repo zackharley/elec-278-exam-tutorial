@@ -14,5 +14,5 @@
    * 2.
 * [Questions & Solutions](Questions_&_Solutions/README.md)
    * [Hashing](Questions_&_Solutions/1.md)
-   * [2.](Questions_&_Solutions/2.md)
+   * [Double Ended Queue](Questions_&_Solutions/2.md)
 
