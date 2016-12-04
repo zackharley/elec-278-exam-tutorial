@@ -8,4 +8,5 @@
 * [Linked Lists](Linked_Lists/README.md)
 * [Queues & Stacks](Queues_&_Stacks/README.md)
 * [Trees](Trees/README.md)
+* Hash Tables
 
