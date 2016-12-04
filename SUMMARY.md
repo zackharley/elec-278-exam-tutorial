@@ -10,4 +10,5 @@
 * [Trees](Trees/README.md)
 * [Hash Tables](Hash_Tables/README.md)
 * [Heaps](Heaps/README.md)
+* Sorting
 
