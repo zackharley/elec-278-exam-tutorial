@@ -13,6 +13,6 @@
 * [Sorting](Sorting/README.md)
    * 2.
 * [Questions & Solutions](Questions_&_Solutions/README.md)
-   * [Hashing](Questions_&_Solutions/1.md)
+   * [Hashing](Questions_&_Solutions/Hashing.md)
    * [Double Ended Queue](Questions_&_Solutions/2.md)
 
