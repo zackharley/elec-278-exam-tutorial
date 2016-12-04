@@ -6,4 +6,5 @@
    * [Structs](Basics/structs.md)
 * Arrays
 * Linked Lists
+* Trees
 
