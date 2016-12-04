@@ -13,6 +13,6 @@
 * [Sorting](Sorting/README.md)
    * 2.
 * [Questions & Solutions](Questions_&_Solutions/README.md)
-   * [1.](Questions_&_Solutions/1.md)
+   * [Hashing](Questions_&_Solutions/1.md)
    * [2.](Questions_&_Solutions/2.md)
 
