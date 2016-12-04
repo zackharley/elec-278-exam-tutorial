@@ -2,6 +2,6 @@
 
 * [Introduction](README.md)
 * [Basics](Basics/README.md)
-   * Pointers
+   * [Pointers](Basics/pointers.md)
    * Structs
 
