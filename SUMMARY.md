@@ -9,5 +9,5 @@
 * [Queues & Stacks](Queues_&_Stacks/README.md)
 * [Trees](Trees/README.md)
 * [Hash Tables](Hash_Tables/README.md)
-* Heaps
+* [Heaps](Heaps/README.md)
 
