@@ -6,5 +6,5 @@
    * [Structs](Basics/structs.md)
 * [Arrays](Arrays/README.md)
 * [Linked Lists](Linked_Lists/README.md)
-* Trees
+* [Trees](Trees/README.md)
 
