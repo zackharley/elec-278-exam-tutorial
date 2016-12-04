@@ -12,5 +12,5 @@
 * [Heaps](Heaps/README.md)
 * [Sorting](Sorting/README.md)
 * [Questions & Solutions](Questions_&_Solutions/README.md)
-   * 1.
+   * [1.](Questions_&_Solutions/1.md)
 
