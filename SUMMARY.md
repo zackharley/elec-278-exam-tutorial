@@ -7,4 +7,5 @@
 * [Arrays](Arrays/README.md)
 * [Linked Lists](Linked_Lists/README.md)
 * [Trees](Trees/README.md)
+* Queues
 
