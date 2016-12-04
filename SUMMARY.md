@@ -5,6 +5,6 @@
    * [Pointers](Basics/pointers.md)
    * [Structs](Basics/structs.md)
 * [Arrays](Arrays/README.md)
-* Linked Lists
+* [Linked Lists](Linked_Lists/README.md)
 * Trees
 
