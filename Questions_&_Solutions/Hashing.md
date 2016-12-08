@@ -5,7 +5,7 @@ Suppose you wanted to take the data in an INI file and build a table in memory t
 
 
 
-what is the difference between a double pointer **P and and pointer *P?
+
 
 
 
