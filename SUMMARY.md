@@ -10,6 +10,7 @@
 * [Trees](Trees/README.md)
    * Binary Trees
    * Binary Search Trees
+   * AVL Trees
 * [Hash Tables](Hash_Tables/README.md)
 * [Heaps](Heaps/README.md)
 * [Sorting](Sorting/README.md)
