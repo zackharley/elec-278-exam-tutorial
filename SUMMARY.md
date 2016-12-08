@@ -11,7 +11,7 @@
 * [Trees](Trees/README.md)
    * [Binary Trees](Trees/Binary_Trees.md)
    * [Binary Search Trees](Trees/Binary_Search_Trees.md)
-   * AVL Trees
+   * [AVL Trees](Trees/AVL_Trees.md)
 * [Heaps](Heaps/README.md)
 * [Sorting](Sorting/README.md)
    * 2.
