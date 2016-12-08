@@ -9,7 +9,7 @@
 * [Queues & Stacks](Queues_&_Stacks/README.md)
 * [Hash Tables](Hash_Tables/README.md)
 * [Trees](Trees/README.md)
-   * Binary Trees
+   * [Binary Trees](Trees/Binary_Trees.md)
    * Binary Search Trees
    * AVL Trees
 * [Heaps](Heaps/README.md)
