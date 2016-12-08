@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define BUFFER_SIZE 200
-#define TABLE_SIZE 60
+#define TABLE_SIZE 256
 
 const char *FILENAME = "hashing.ini";
 
