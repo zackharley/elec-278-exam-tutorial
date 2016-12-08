@@ -81,16 +81,24 @@ void populateHashTable() {
 
 void insert(char *key, char *value) {
 	Pair *pair = (Pair *) malloc(sizeof(Pair));
+
 	pair->key = malloc(sizeof(char) * (strlen(key) + 1));
 	pair->value = malloc(sizeof(char) * (strlen(value) + 1));
 	strcpy(pair->key, key);
 	strcpy(pair->value, value);
 
+	int collisionCount = 0;
+
 	int hashIndex = hash(key);
 
 	while(hashArray[hashIndex] != NULL && strcmp(hashArray[hashIndex]->key, "") != 0) {
+		++collisionCount;
 		++hashIndex;
 		hashIndex %= TABLE_SIZE;
+	}
+
+	if(collisionCount > 0) {
+		printf("Number of collisions: %d\n\n", collisionCount);
 	}
 
 	hashArray[hashIndex] = pair;
