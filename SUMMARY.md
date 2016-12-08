@@ -8,11 +8,11 @@
 * [Linked Lists](Linked_Lists/README.md)
 * [Queues & Stacks](Queues_&_Stacks/README.md)
 * [Hash Tables](Hash_Tables/README.md)
-* [Heaps](Heaps/README.md)
 * [Trees](Trees/README.md)
    * Binary Trees
    * Binary Search Trees
    * AVL Trees
+* [Heaps](Heaps/README.md)
 * [Sorting](Sorting/README.md)
    * 2.
 * [Questions & Solutions](Questions_&_Solutions/README.md)
