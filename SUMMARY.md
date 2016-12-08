@@ -19,5 +19,5 @@
 * [Questions & Solutions](Questions_&_Solutions/README.md)
    * [Hashing](Questions_&_Solutions/Hashing.md)
    * [Double Ended Queue](Questions_&_Solutions/Double_Ended_Queue.md)
-   * Pointers & Double Pointers
+   * [Pointers & Double Pointers](Questions_&_Solutions/Pointers_&_Double_Pointers.md)
 
