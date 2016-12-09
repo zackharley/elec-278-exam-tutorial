@@ -141,18 +141,26 @@ Searching the table for a specific key is a fairly simple process. We start of b
 
 Next, we continually check indexes increasing by one each time, until we either find our value or find a `NULL` pointer:
 ```c
-while(hashArray[hashIndex] != NULL) {
+Pair *search(char *key) {
+	int hashIndex = hash(key);
 
-    if(strcmp(hashArray[hashIndex]->key, key) == 0) {
-        Pair *temp = hashArray[hashIndex];
-        hashArray[hashIndex] = dummyPair;
-        return temp; 
-    }
+	while(hashArray[hashIndex] != NULL) {
 
-    ++hashIndex;
-    hashIndex %= TABLE_SIZE; // wrap around to front of table
+		if(strcmp(hashArray[hashIndex]->key, key) == 0) {
+			return hashArray[hashIndex];
+		}
 
+		++hashIndex;
+
+		hashIndex %= TABLE_SIZE;
+
+	}
+
+	hashIndex %= TABLE_SIZE; // wrap around to front of table
 }
 ```
 
+The important thing to go over here is the use of the `strcmp`. This function takes two strings and compares them to each other returning 0 if they are identical. This is an easy way to check the equality of strings. If no match is found, `NULL` is returned.
+
 ### Removing from the table
+To remove from the table, we must supply the function with the key we want to delete.
