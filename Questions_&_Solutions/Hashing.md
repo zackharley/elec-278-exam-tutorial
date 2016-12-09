@@ -23,6 +23,14 @@ The integer values for the characters are generated using ASCII character values
 
 ![An ASCII Table](http://www.asciitable.com/index/asciifull.gif)
 For example, if we want to generate values for the first three letters in the key `albert`, which is the first key in our INI file, what we have to do is:
+```c
+int characterValue = character - 'a' + 1;
 ```
-charact
+for `'a'`, `'l'`, and `'b'`.
+
+The calculations give:
+```c
+'a' - 'a' + 1; // 97 - 97 + 1 = 1
+'l' - 'a' + 1; // 108 - 97 + 1 = 12
+'b' = 'a' + 1; // 98 - 97 + 1 = 2
 ```
