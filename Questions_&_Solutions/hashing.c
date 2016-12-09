@@ -3,9 +3,10 @@
 #include <string.h>
 
 #define BUFFER_SIZE 200
-#define TABLE_SIZE 60
+#define TABLE_SIZE 256
 
 const char *FILENAME = "hashing.ini";
+int collisions = 0;
 
 typedef struct Pair {
 	char *key;
@@ -39,24 +40,6 @@ int calculateCharacterValue(char c) {
 	return c - 'a';
 }
 
-Pair *search(char *key) {
-	int hashIndex = hash(key);
-
-	while(hashArray[hashIndex] != NULL) {
-
-		if(strcmp(hashArray[hashIndex]->key, key) == 0) {
-			return hashArray[hashIndex];
-		}
-
-		++hashIndex;
-
-		hashIndex %= TABLE_SIZE;
-
-	}
-
-	return NULL;
-}
-
 void populateHashTable() {
 	FILE *fp;
 	char str[BUFFER_SIZE];
@@ -81,27 +64,42 @@ void populateHashTable() {
 
 void insert(char *key, char *value) {
 	Pair *pair = (Pair *) malloc(sizeof(Pair));
-
 	pair->key = malloc(sizeof(char) * (strlen(key) + 1));
 	pair->value = malloc(sizeof(char) * (strlen(value) + 1));
 	strcpy(pair->key, key);
 	strcpy(pair->value, value);
 
-	int collisionCount = 0;
-
 	int hashIndex = hash(key);
+	int originalIndex = hashIndex;
 
 	while(hashArray[hashIndex] != NULL && strcmp(hashArray[hashIndex]->key, "") != 0) {
-		++collisionCount;
 		++hashIndex;
 		hashIndex %= TABLE_SIZE;
 	}
 
-	if(collisionCount > 0) {
-		printf("Number of collisions: %d\n\n", collisionCount);
+	if(hashIndex != originalIndex) {
+		collisions++;
 	}
 
 	hashArray[hashIndex] = pair;
+}
+
+Pair *search(char *key) {
+	int hashIndex = hash(key);
+
+	while(hashArray[hashIndex] != NULL) {
+
+		if(strcmp(hashArray[hashIndex]->key, key) == 0) {
+			return hashArray[hashIndex];
+		}
+
+		++hashIndex;
+
+		hashIndex %= TABLE_SIZE;
+
+	}
+
+	return NULL;
 }
 
 Pair *removeFromTable(Pair *pair) {
@@ -145,6 +143,7 @@ int main() {
 	Pair *pair = (Pair *) malloc(sizeof(Pair));
 
 	populateHashTable();
+	printf("There were %d collisions when inserting to the hash table.\n\n", collisions);
 
 	display();
 
