@@ -100,6 +100,8 @@ Insertion involves several steps:
 3. Find the correct index to insert the Pair
 4. Insert the pair
 
+In the case of a collision, we use the **linear probing** method.
+
 To create a new Pair, we follow the same convention as we do for creating a new Node in a linked list or a new Node in a tree, with some minor changes due to the fact that we're storing strings rather than integers:
 ```c
 Pair *pair = (Pair *) malloc(sizeof(Pair));
@@ -137,6 +139,20 @@ if(hashIndex != originalIndex) {
 ### Searching
 Searching the table for a specific key is a fairly simple process. We start of by determining the hash index for the key we are searching for using our hash function.
 
-Next me 
+Next, we continually check indexes increasing by one each time, until we either find our value or find a `NULL` pointer:
+```c
+while(hashArray[hashIndex] != NULL) {
+
+    if(strcmp(hashArray[hashIndex]->key, key) == 0) {
+        Pair *temp = hashArray[hashIndex];
+        hashArray[hashIndex] = dummyPair;
+        return temp; 
+    }
+
+    ++hashIndex;
+    hashIndex %= TABLE_SIZE; // wrap around to front of table
+
+}
+```
 
 ### Removing from the table
