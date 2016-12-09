@@ -120,4 +120,10 @@ while(hashArray[hashIndex] != NULL && strcmp(hashArray[hashIndex]->key, "") != 0
 
 hashArray[hashIndex] = pair;
 ```
-Also, to answer the addition to the question, we can count the number of collisions by comparing the original hash index to the actual insertion index for each Pair we insert into the hash table, i.e. For `albert`, the hash index would be 24; if we ended up inserting the Pair containing `albert` at index 26, we can say that a collision has occurred because the original index and the insertion index don't match.
+Also, to answer the addition to the question, we can count the number of collisions by comparing the original hash index to the actual insertion index for each Pair we insert into the hash table, i.e. For `albert`, the hash index would be 24; if we ended up inserting the Pair containing `albert` at index 26, we can say that a collision has occurred because the original index and the insertion index don't match:
+```c
+
+if(hashIndex != originalIndex) {
+    collisions++;
+}
+```
