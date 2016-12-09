@@ -163,4 +163,24 @@ Pair *search(char *key) {
 The important thing to go over here is the use of the `strcmp`. This function takes two strings and compares them to each other returning 0 if they are identical. This is an easy way to check the equality of strings. If no match is found, `NULL` is returned.
 
 ### Removing from the table
-To remove from the table, we must supply the function with the key we want to delete.
+To remove from the table, we must supply the function with the key we want to delete. Based on that key, we will get a hash index from the hash function. We will then perform the same steps as the `search` function to find the Pair we want to remove, but instead of just returning a pointer to the pair, we want to change the pointer to our dummy pair. This dummy pair allows us to keep searching in the event that a Pair is removed from the middle of a cluster of pairs resulting rom multiple collisions (or just normal hashing for that matter).
+```c
+Pair *removeFromTable(char *key) {
+	int hashIndex = hash(key);
+
+	while(hashArray[hashIndex] != NULL) {
+
+		if(strcmp(hashArray[hashIndex]->key, key) == 0) {
+			Pair *temp = hashArray[hashIndex];
+			hashArray[hashIndex] = dummyPair;
+			return temp; 
+		}
+
+		++hashIndex;
+		hashIndex %= TABLE_SIZE;
+
+	}
+
+	return NULL;
+}
+```
