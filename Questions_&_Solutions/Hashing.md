@@ -6,6 +6,11 @@ Suppose you wanted to take the data in an INI file and build a table in memory t
 
 ##Solution: 
 
+In the question we are given a few key pieces of information that we can take advantage of right from the start. The first is the assumption that there will never be more that 256 variable names (or "keys"). This means that our hash table only needs to hold at most 256 entries. We can define a constant to make use of the maximum size in the code:
+```c
+#define TABLE_SIZE 256
+```
+
 ### Loading from the INI file
 
 The first thing we must know, is what the format of the INI file is. INI files are filled with key-value pairs separated by the "=" symbol. 
@@ -13,6 +18,16 @@ The first thing we must know, is what the format of the INI file is. INI files a
 key=value
 ```
 The INI file containing our key value pairs is called [hashing.ini](hashing.ini).
+
+When we pull these key-value pairs out of the INI file, we'll need to store them somehow, so we can create a new `struct` to hold them:
+
+```c
+typedef struct Pair {
+	char *key;
+	char *value;
+} Pair;
+```
+Now 
 
 ### The Hashing Function
 When creating a hashing function it is important to understand what the purpose of the hashing function is. The hashing function is meant to take a key and map it to a valid index in the hash table.
