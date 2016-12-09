@@ -6,6 +6,8 @@ Suppose you wanted to take the data in an INI file and build a table in memory t
 
 ##Solution: 
 
+> The source code can be seen in [hashing.c](hashing.c)
+
 In the question we are given a few key pieces of information that we can take advantage of right from the start. The first is the assumption that there will never be more that 256 variable names (or "keys"). This means that our hash table only needs to hold at most 256 entries. We can define a constant to make use of the maximum size in the code:
 ```c
 #define TABLE_SIZE 256
@@ -131,3 +133,10 @@ if(hashIndex != originalIndex) {
     collisions++;
 }
 ```
+
+### Searching
+Searching the table for a specific key is a fairly simple process. We start of by determining the hash index for the key we are searching for using our hash function.
+
+Next me 
+
+### Removing from the table
