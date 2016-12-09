@@ -36,7 +36,7 @@ int hash(char *key) {
 }
 
 int calculateCharacterValue(char c) {
-	return c - 'a' + 1;
+	return c - 'a';
 }
 
 Pair *search(char *key) {
