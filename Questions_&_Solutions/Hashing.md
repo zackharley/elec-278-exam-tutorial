@@ -10,6 +10,7 @@ In the question we are given a few key pieces of information that we can take ad
 ```c
 #define TABLE_SIZE 256
 ```
+We also need to understand how INI files are structured, which is explored in the next section.
 
 ### Loading from the INI file
 
@@ -27,7 +28,34 @@ typedef struct Pair {
 	char *value;
 } Pair;
 ```
-Now 
+Now that we've defined the structure, we can begin to read data from the INI file. We will need to read the file in line-by-line and split the line into a key and a value. After that will use the `insert()` function to add the data pulled from the file to the hash table, but more on that later.
+
+To begine reading from the file, we first need to define a pointer to a file:
+```c
+FILE *fp;
+```
+We also need variables to store the buffer for the current line, the key, and the value, respectively:
+```c
+char str[BUFFER_SIZE];
+char *key;
+char *value;
+```
+
+We can create a pointer to a file using the following code:
+```c
+fp = fopen(FILENAME, "r");
+```
+
+The `fopen` function takes a string that contains the file name and the file permissions (we have specified `"r"` for read) as inputs and returns a pointer to a file. We can then use `fgets` to read the file line-by-line:
+```c
+while(fgets(str, BUFFER_SIZE, fp) != NULL) {
+      key = strtok(str, search);
+      value = strtok(NULL, "\n");
+      insert(key, value);
+  }
+```
+
+What the above code does is *tokenize* the string containing the current line. It separates the input 
 
 ### The Hashing Function
 When creating a hashing function it is important to understand what the purpose of the hashing function is. The hashing function is meant to take a key and map it to a valid index in the hash table.
