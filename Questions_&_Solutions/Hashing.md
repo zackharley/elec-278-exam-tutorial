@@ -30,7 +30,7 @@ typedef struct Pair {
 ```
 Now that we've defined the structure, we can begin to read data from the INI file. We will need to read the file in line-by-line and split the line into a key and a value. After that will use the `insert()` function to add the data pulled from the file to the hash table, but more on that later.
 
-To begine reading from the file, we first need to define a pointer to a file:
+To begin reading from the file, we first need to define a pointer to a file:
 ```c
 FILE *fp;
 ```
@@ -55,7 +55,12 @@ while(fgets(str, BUFFER_SIZE, fp) != NULL) {
   }
 ```
 
-What the above code does is *tokenize* the string containing the current line. It separates the input 
+What the above code does is *tokenize* the string containing the current line. It separates the input string into a key and a value on either side of the "=" symbol. 
+
+Finally, we need to close the input stream:
+```c
+fclose(fp);
+```
 
 ### The Hashing Function
 When creating a hashing function it is important to understand what the purpose of the hashing function is. The hashing function is meant to take a key and map it to a valid index in the hash table.
@@ -84,3 +89,40 @@ characterValue1 * characterValue2 * characterValue3 % TABLE_SIZE; // 1 * 12 * 2 
 ```
 
 The hash function then returns the index which can be used to perform operations on the hash table.
+
+### Inserting into the table
+
+Insertion involves several steps:
+1. Create a new Pair and populating it
+2. Determine the hash index based off of the key
+3. Find the correct index to insert the Pair
+4. Insert the pair
+
+To create a new Pair, we follow the same convention as we do for creating a new Node in a linked list or a new Node in a tree, with some minor changes due to the fact that we're storing strings rather than integers:
+```c
+Pair *pair = (Pair *) malloc(sizeof(Pair));
+pair->key = malloc(sizeof(char) * (strlen(key) + 1));
+pair->value = malloc(sizeof(char) * (strlen(value) + 1));
+strcpy(pair->key, key);
+strcpy(pair->value, value);
+```
+On the first line we initialize a pointer to a new Pair, pointing it to the address of the memory allocated by `malloc`. Lines two and three allocate enough memory to store the key and value supplied to the `insert` function. Lines copy the strings stored at the address of `key` and address of `value` and set the values of `pair->key` and `key->value` to their respective input, thus creating our new Pair.
+
+Using our hash function, we can determine the hash index for our supplied key. We will use a while loop to ensure that we are not overwriting any existing pointers, inserting the pointer to our new pair at the first open index.
+```c
+int collisionCount = 0;
+
+int hashIndex = hash(key);
+
+while(hashArray[hashIndex] != NULL && strcmp(hashArray[hashIndex]->key, "") != 0) {
+    ++collisionCount;
+    ++hashIndex;
+    hashIndex %= TABLE_SIZE;
+}
+
+if(collisionCount > 0) {
+    printf("Number of collisions: %d\n\n", collisionCount);
+}
+
+hashArray[hashIndex] = pair;
+```
