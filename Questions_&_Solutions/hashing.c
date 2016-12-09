@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define BUFFER_SIZE 200
-#define TABLE_SIZE 256
+#define TABLE_SIZE 60
 
 const char *FILENAME = "hashing.ini";
 
@@ -17,7 +17,7 @@ struct Pair *dummyPair; // will be pointed to by any empty indices
 
 // Function Declarations
 int hash(char *key);
-int calculateLetterValue(char c);
+int calculateCharacterValue(char c);
 Pair *search(char *key);
 void populateHashTable();
 void insert(char *key, char *value);
@@ -26,16 +26,16 @@ void display();
 
 
 int hash(char *key) {
-	int hashIndex = calculateLetterValue(key[0]);
+	int hashIndex = calculateCharacterValue(key[0]);
 
 	for(int i = 1; i < 3; i++) {
-		hashIndex *= calculateLetterValue(key[i]);
+		hashIndex *= calculateCharacterValue(key[i]);
 	}
 
 	return hashIndex % TABLE_SIZE;
 }
 
-int calculateLetterValue(char c) {
+int calculateCharacterValue(char c) {
 	return c - 'a' + 1;
 }
 
