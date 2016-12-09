@@ -126,3 +126,5 @@ if(collisionCount > 0) {
 
 hashArray[hashIndex] = pair;
 ```
+
+Also, to answer the addition to the question, we can count the number of collisions that occur when
