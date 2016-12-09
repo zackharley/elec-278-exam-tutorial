@@ -28,9 +28,16 @@ int characterValue = character - 'a' + 1;
 ```
 for `'a'`, `'l'`, and `'b'`.
 
-The calculations give:
+The calculations, performed in the `calculateCharacterValue()` function give:
 ```c
 'a' - 'a' + 1; // 97 - 97 + 1 = 1
 'l' - 'a' + 1; // 108 - 97 + 1 = 12
 'b' = 'a' + 1; // 98 - 97 + 1 = 2
 ```
+
+As previously stated, we can then use these character values to find our hash index:
+```c
+characterValue1 * characterValue2 * characterValue3 % TABLE_SIZE; // 1 * 12 * 2 % 256 = 24
+```
+
+The hash function then returns the index which can be used to perform operations on the hash table.
