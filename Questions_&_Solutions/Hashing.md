@@ -109,22 +109,15 @@ strcpy(pair->value, value);
 On the first line we initialize a pointer to a new Pair, pointing it to the address of the memory allocated by `malloc`. Lines two and three allocate enough memory to store the key and value supplied to the `insert` function. Lines copy the strings stored at the address of `key` and address of `value` and set the values of `pair->key` and `key->value` to their respective input, thus creating our new Pair.
 
 Using our hash function, we can determine the hash index for our supplied key. We will use a while loop to ensure that we are not overwriting any existing pointers, inserting the pointer to our new pair at the first open index.
-```c
-int collisionCount = 0;
 
+```c
 int hashIndex = hash(key);
 
 while(hashArray[hashIndex] != NULL && strcmp(hashArray[hashIndex]->key, "") != 0) {
-    ++collisionCount;
     ++hashIndex;
-    hashIndex %= TABLE_SIZE;
-}
-
-if(collisionCount > 0) {
-    printf("Number of collisions: %d\n\n", collisionCount);
+    hashIndex %= TABLE_SIZE; // wrap around to front of table
 }
 
 hashArray[hashIndex] = pair;
 ```
-
 Also, to answer the addition to the question, we can count the number of collisions that occur when
