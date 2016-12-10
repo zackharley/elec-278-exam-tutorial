@@ -45,7 +45,13 @@ ptr = &num;
 ptrToPtr = &ptr;
 ```
 
-If you've been following the previous examples, then you should be fine with all of the stuf on lines
+If you've been following the previous examples, then you should be fine with all of the stuff on lines 1, 2, and 4 (if not go back and review the introductory pointers material). Line 3 is the declaration of a pointer to a pointer. The latter pointer must point to an variable of type `int`. Line 5 is where we tell `ptrToPtr` where to point, i.e. we specify the address that it points to. In this case `ptrToPrt` points to `ptr`, which points to `num`.
+
+We can access the value of num using `ptrToPtr`:
+```c
+int numCopy = **ptrToPtr;
+```
+Remember, we are using the value-at-address operator to dereference the pointer twice. This means that we first get the value-at-address of `ptrToPtr` which is the address stored in `ptr`. We then get the value-at-address of `ptr` which gives us the value of `num`.
 
 If you're still unsure of what's going on with pointers, try playing with [this example](/Basics/pointers.c).
 
