@@ -31,7 +31,7 @@ char letter = 'a';
 
 // Both are valid
 voidPtr = &num;
-voidPtr = &char;
+voidPtr = &letter;
 ```
 A NULL pointer is a pointer that does not hold a valid memory address due to the fact that it was initialized pointing to memory address `0` or `NULL`.
 ```c
