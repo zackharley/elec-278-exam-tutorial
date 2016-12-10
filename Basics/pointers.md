@@ -20,6 +20,28 @@ int anotherNumCopy = *(&num);
 int anotherNumCopy = num;
 ```
 
+## Void pointers, NULL pointers, and Uninitialized pointers
+
+A void pointer is a pointer that is allowed to be pointed at any kind of data.
+```c
+void *voidPtr;
+
+int num = 42;
+int char = 'a';
+
+// Both are valid
+voidPtr = &num;
+voidPtr = &char;
+```
+A NULL pointer is a pointer that does not hold a valid memory address due to the fact that it was initialized pointing to memory address `0` or `NULL`.
+```c
+int *nullPtr = NULL;
+// or
+int *nullPtr = 0;
+```
+Uninitialized pointers are pointers that do not yet hold a memory address
+
+
 If you're still unsure of what's going on with pointers, try running [this example](/Basics/pointers.c).
 
 
