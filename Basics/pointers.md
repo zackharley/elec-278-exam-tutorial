@@ -14,7 +14,7 @@ ptr = &num; // get the address-of num
 int numCopy = *ptr; // initialize the value of numCopy to be the value-at-address stored in ptr 
 ```
 
-Another important rule to remember is that the address-of and value-at-address operators cancel each other out. This allows the following two lines to be identical.
+Another important rule to remember is that the address-of and value-at-address operators cancel each other out. This allows the following two lines to be identical:
 ```c
 int anotherNumCopy = *(&num);
 int anotherNumCopy = num;
