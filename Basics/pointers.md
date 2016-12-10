@@ -13,7 +13,7 @@ ptr = &num;
 int numCopy = *ptr;
 ```
 
-If you're still unsure of what's going on here, try running this example.
+If you're still unsure of what's going on here, try running [this example](/Basics/pointers.c).
 
 
 
