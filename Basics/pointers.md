@@ -36,6 +36,17 @@ int *uninitializedPtr;
 
 ## Pointers to Pointers
 
+A pointer to a pointer is one of the more confusing concepts concerning pointers. Let's consider the following example:
+```c
+int num = 1;
+int *ptr = 0;
+int **ptrToPtr;
+ptr = &num;
+ptrToPtr = &ptr;
+```
+
+If you've been following the previous examples, then you should be fine with all of the stuf on lines
+
 If you're still unsure of what's going on with pointers, try playing with [this example](/Basics/pointers.c).
 
 
