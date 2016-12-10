@@ -20,7 +20,7 @@ int anotherNumCopy = *(&num);
 int anotherNumCopy = num;
 ```
 
-## NULL pointers, and Uninitialized pointers
+## NULL Pointers, and Uninitialized Pointers
 
 A NULL pointer is a pointer that does not hold a valid memory address due to the fact that it was initialized pointing to memory address `0` or `NULL`.
 ```c
@@ -33,6 +33,8 @@ Uninitialized pointers are pointers that do not yet hold a memory address. If yo
 ```c
 int *uninitializedPtr;
 ```
+
+# Pointers to Pointers
 
 If you're still unsure of what's going on with pointers, try playing with [this example](/Basics/pointers.c).
 
