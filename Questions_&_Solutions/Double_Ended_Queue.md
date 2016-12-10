@@ -1,6 +1,6 @@
-# Double Ended Queue
+# Double Ended Queue (Deque)
 ## Question:
-Consider the implementation of a double ended queue using an array. Write code for:
+Consider the implementation of a double ended queue (deque) using an array. Write code for:
 
 1. Enqueue
 2. Dequeue
@@ -8,3 +8,4 @@ Consider the implementation of a double ended queue using an array. Write code f
 ---
 
 ## Solution: 
+> The source code can be found in deque.c
