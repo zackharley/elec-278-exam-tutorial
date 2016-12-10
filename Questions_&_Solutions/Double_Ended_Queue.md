@@ -5,4 +5,6 @@ Consider the implementation of a double ended queue using an array. Write code f
 1. Enqueue
 2. Dequeue
 
+---
+
 ## Solution: 
