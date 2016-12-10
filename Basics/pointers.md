@@ -44,7 +44,7 @@ Uninitialized pointers are pointers that do not yet hold a memory address. If yo
 int *uninitializedPtr;
 ```
 
-If you're still unsure of what's going on with pointers, try running [this example](/Basics/pointers.c).
+If you're still unsure of what's going on with pointers, try playing with [this example](/Basics/pointers.c).
 
 
 
