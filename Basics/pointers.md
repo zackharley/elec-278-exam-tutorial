@@ -39,8 +39,10 @@ int *nullPtr = NULL;
 // or
 int *nullPtr = 0;
 ```
-Uninitialized pointers are pointers that do not yet hold a memory address
-
+Uninitialized pointers are pointers that do not yet hold a memory address. If you try to do anything with an uninitialized pointer, you will get a segmentation fault error.
+```c
+int *uninitializedPtr;
+```
 
 If you're still unsure of what's going on with pointers, try running [this example](/Basics/pointers.c).
 
