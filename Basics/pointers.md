@@ -27,7 +27,7 @@ A void pointer is a pointer that is allowed to be pointed at any kind of data.
 void *voidPtr;
 
 int num = 42;
-int char = 'a';
+char letter = 'a';
 
 // Both are valid
 voidPtr = &num;
