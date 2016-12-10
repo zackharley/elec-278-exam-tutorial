@@ -8,4 +8,5 @@ Consider the implementation of a double ended queue (deque) using an array. Writ
 ---
 
 ## Solution: 
-> The source code can be found in deque.c
+> The source code can be found in [deque.c](/Questions_&_Solutions/deque.c)
+
