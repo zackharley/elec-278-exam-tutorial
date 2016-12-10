@@ -14,6 +14,12 @@ ptr = &num; // get the address-of num
 int numCopy = *ptr; // initialize the value of numCopy to be the value-at-address stored in ptr 
 ```
 
+Another important rule to remember is that the address-of and value-at-address operators cancel each other out, i.e. the following two lines are identical.
+```c
+int anotherNumCopy = *(&num);
+int anotherNumCopy = num;
+```
+
 If you're still unsure of what's going on with pointers, try running [this example](/Basics/pointers.c).
 
 
