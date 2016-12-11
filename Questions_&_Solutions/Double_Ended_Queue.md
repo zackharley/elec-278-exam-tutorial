@@ -58,4 +58,17 @@ void addBack(int num) {
 
 ### `removeFront()`
 
+The function to remove from the front also involves shifting, but this time shifting to the left. We start off by storing the value we want to remove in the `num` variable. We then perform the shifting and then replace the former last element in the deque with a 0. We then return the `num` that we wanted to remove.
+
+```c
+int removeFront() {
+    if(count == 0) return 0;
+    int num = deque[0];
+    for(int i = 0; i < count - 1; i++) {
+        deque[i] = deque[i + 1];
+    }
+    deque[--count] = 0;
+    return num;
+}
+```
 ### `removeBack()`
