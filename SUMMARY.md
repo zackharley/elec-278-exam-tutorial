@@ -14,7 +14,6 @@
     * [AVL Trees](Trees/AVL_Trees.md)
 * [Heaps](Heaps/README.md)
 * [Sorting](Sorting/README.md)
-    * 2.
 * [Graphs](Graphs/index.md)
 * [Questions & Solutions](Questions_&_Solutions/README.md)
     * [Hashing](Questions_&_Solutions/Hashing.md)
