@@ -52,7 +52,6 @@ We still perform the check to see if it is possible to add an item to the deque.
 ```c
 void addBack(int num) {
     if(count == MAX) return;
-    deque[count] = num;
-    count++;
+    deque[count++] = num;
 }
 ```
