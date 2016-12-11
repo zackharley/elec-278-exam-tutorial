@@ -55,3 +55,7 @@ void addBack(int num) {
     deque[count++] = num;
 }
 ```
+
+### `removeFront()`
+
+### `removeBack()`
